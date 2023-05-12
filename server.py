@@ -12,4 +12,6 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import gevent.pywsgi
+    app_server = gevent.pywsgi.WSGIServer(('localhost', 8080), app)
+    app_server.serve_forever()
