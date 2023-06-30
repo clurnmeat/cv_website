@@ -13,12 +13,9 @@ def aboutMe():
     return render_template("aboutMe.html")
 
 
-if __name__ == "__main__":
-    import gevent.pywsgi
-    app_server = gevent.pywsgi.WSGIServer(('localhost', 8080), app)
-    print('jammin on 8080')
 
 if __name__ == "__main__":
     import gevent.pywsgi
     app_server = gevent.pywsgi.WSGIServer(('localhost', 8080), app)
     app_server.serve_forever()
+    print('jammin on 8080')
