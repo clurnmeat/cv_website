@@ -5,12 +5,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    import datetime
+    date = datetime.date.today()
+    date_update = date.isoformat()
+    return render_template("index.html", date=date_update[0:4])
 
 
-@app.route("/About-Me")
-def aboutMe():
-    return render_template("aboutMe.html")
+
 
 
 
